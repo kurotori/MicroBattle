@@ -20,8 +20,11 @@ const Juego = {
         lugares: LugaresC,
         puntos:0
     }
-
 }
+
+//Comenzar Radio Login
+radio.setGroup(1)
+
 
 
 basic.forever(function () {
@@ -35,4 +38,8 @@ basic.forever(function () {
         basic.clearScreen()
 
     }
+
+    radio.onReceivedString(function(texto) {
+        serial.writeLine(texto)
+    })
 })
